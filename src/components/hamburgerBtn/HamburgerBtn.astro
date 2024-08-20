@@ -1,4 +1,32 @@
 ---
 ---
-
-<img class="z-50 max-w-10"src="   https://cdn-icons-png.flaticon.com/512/10080/10080488.png  " alt="">
+<div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <style>
+    .hamburger-menu {
+      @apply flex flex-col justify-between w-8 h-6 cursor-pointer;
+    }
+    .hamburger-menu span {
+      @apply block w-full h-1 bg-stone-200 transition-transform duration-300 ease-in-out border rounded-sm;
+    }
+    .hamburger-menu.open span:nth-child(1) {
+      @apply transform rotate-45 translate-y-2;
+    }
+    .hamburger-menu.open span:nth-child(2) {
+      @apply opacity-0;
+    }
+    .hamburger-menu.open span:nth-child(3) {
+      @apply transform -rotate-45 -translate-y-2;
+    }
+  </style>
+  
+  <script>
+    document.querySelector('.hamburger-menu').addEventListener('click', function() {
+      this.classList.toggle('open');
+    });
+  </script>
+  

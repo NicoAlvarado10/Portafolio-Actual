@@ -12,7 +12,7 @@ interface Props {
 const {  about, project ,language, pageLink } = Astro.props
 ---
 
-<nav class="fixed top-0 w-full bg-black bg-opacity-75 backdrop-filter backdrop-blur-lg flex justify-center gap-80 items-center p-2 shadow-md z-10 " >
+<nav class="fixed top-0 w-full bg-black bg-opacity-75 backdrop-filter backdrop-blur-lg flex justify-between xl:px-64 sm:px-16  items-center p-4 shadow-md z-10 " >
     <Logo />
     <ul class="nav__listas flex items-center gap-6  ">
         <li class="nav__list"><a href="#about" class="  hover:text-sky-600 font-medium uppercase md:text-lg">{about}</a></li>
@@ -32,9 +32,9 @@ const {  about, project ,language, pageLink } = Astro.props
     @media (max-width:768px ){
         nav{
             gap: 40px;
-            
             display: flex;
             justify-content: space-around;
+            align-items: center;
             
         }
     }
@@ -51,8 +51,7 @@ const {  about, project ,language, pageLink } = Astro.props
 
   @media (max-width:515px ){
     .menu-toggle {
-        display: block;
-        padding-right: 30px;
+        display: block;    
         padding-top: 0px;
         z-index: 50;
         color: white;
@@ -73,7 +72,6 @@ const {  about, project ,language, pageLink } = Astro.props
         left: 0%;
         gap: 0;
         padding: 0 20px;
-        padding-bottom: 20rem;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
         padding-bottom: 25px;
         width: 100%;
