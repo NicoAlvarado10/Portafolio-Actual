@@ -1,0 +1,129 @@
+---
+import Logo from '../../ui elements/logo/Logo.astro'
+import HamburgerBtn  from "../hamburgerBtn/HamburgerBtn.astro";
+
+interface Props {
+    project: string,
+    about: string,
+    language: string,
+    pageLink: string
+}
+
+const {  about, project ,language, pageLink } = Astro.props
+---
+
+<nav class="fixed top-0 w-full bg-black bg-opacity-75 backdrop-filter backdrop-blur-lg flex justify-center gap-80 items-center p-2 shadow-md z-10 " >
+    <Logo />
+    <ul class="nav__listas flex items-center gap-6  ">
+        <li class="nav__list"><a href="#about" class="  hover:text-sky-600 font-medium uppercase md:text-lg">{about}</a></li>
+        <li class="nav__list"><a href="#projects" class="  hover:text-sky-600 font-medium uppercase md:text-lg">{project}</a></li>
+        <li class="nav__list">
+            <a class="  hover:text-sky-600 font-medium uppercase md:text-lg" href={ pageLink }>{ language }</a>
+        </li>
+    </ul>
+    <div class="menu-toggle">
+        <HamburgerBtn/>
+    </div>
+    
+</nav>
+
+
+<style>
+    @media (max-width:768px ){
+        nav{
+            gap: 40px;
+            
+            display: flex;
+            justify-content: space-around;
+            
+        }
+    }
+    .menu-toggle {
+    display: none;
+    float: right;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    
+  }
+
+  @media (max-width:515px ){
+    .menu-toggle {
+        display: block;
+        padding-right: 30px;
+        padding-top: 0px;
+        z-index: 50;
+        color: white;
+    }
+    
+    .nav__listas{
+        display: none;
+    }
+    
+    .nav__listas.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: calc(80% + 0px);
+        right: 0%;
+        left: 0%;
+        gap: 0;
+        padding: 0 20px;
+        padding-bottom: 20rem;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        padding-bottom: 25px;
+        width: 100%;
+        gap: 30px;
+        transition: all 0.10s ease;
+        padding-top: 2rem;
+        background-color: black;
+    }
+    
+    .nav__list a {
+        padding: 2px 2px;
+    }
+    
+    .nav__list {
+        margin-top: 5px;
+        text-align: center;
+        border-bottom: 2px solid  rgb(2 132 199 / var(--tw-text-opacity));
+        width: 100%;
+        padding-bottom: 5px;
+        
+    }
+   
+    
+    .nav__list:hover a {
+        transform: none;
+        transition: all 0.4s ease;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle') as HTMLElement;
+    const navMenu = document.querySelector('.nav__listas') as HTMLElement;
+
+    menuToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function (event) {
+        const target = event.target as Node;
+
+        const isClickInsideMenu = navMenu.contains(target);
+        const isClickOnsideMenuToggle = menuToggle.contains(target);
+
+        if (!isClickInsideMenu && !isClickOnsideMenuToggle) {
+            navMenu.classList.remove('active');
+        }
+    });
+});
+
+
+</script>

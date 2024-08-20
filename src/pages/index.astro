@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/nav/Nav.astro'
+import Header from "../components/header/Header.astro"
+import Skills from "../sections/skills/Skills.astro"
+import Projects from "../sections/projects/Projects.astro"
+import About from "../sections/about/About.astro"
+import Footer from "../components/footer/Footer.astro"
+import ProjectComponent from '../components/projectComponent/ProjectComponent.astro'
+---
+<Layout
+    title="Nicolás Alvarado | Frontend Developer"
+    description="Nicolás Alvarado, a frontend developer. Explore my projects and discover how I can help you with your next web challenge."
+    language="en"
+    iconImg='icon.png'
+
+>
+   <Nav 
+    project="Projects" 
+    about="About" 
+    language="ESP"
+    pageLink='/es'
+    />
+    <Header 
+    greets='Frontend'
+    firstTitle="I am Nicolás Alvarado"
+    firstLetter="A web developer specialized in "
+    emphasizedWords="Front-End"
+    restOfWords={[", focused on creating visually appealing and functional interfaces. "]}
+    resumeLink="nicolas alvarado.pdf"
+    resume="My Resume"
+    />
+
+    <Skills title="Skills" />
+    <Projects title="Projects" id='#projects'>
+        <ProjectComponent 
+            title='Industria Secttre' 
+            image='Industria-Secttre.webp' 
+            alt='Industria Secttre website'
+            description='Industry offering a wide range of products'
+            tecnologies={[ 'HTML', 'CSS', 'JavaScript' ]}
+            codeLink='https://github.com/NicoAlvarado10/Proyecto-Industria.git'
+            website='https://industria-secttre.netlify.app'
+            codeBtnText='Repo'
+            liveBtnText='Live'
+        />
+        <ProjectComponent 
+            title='Burger House' 
+            image='Burger-House.webp' 
+            alt='Burger House website'
+            description='Landing Page of a burger restaurant'
+            tecnologies={[ 'HTML', 'CSS', 'JavaScript' ]}
+            codeLink='https://github.com/NicoAlvarado10/Proyecto-Hamburguesa.git'
+            website='https://house-burger.netlify.app/'
+            codeBtnText='Repo'
+            liveBtnText='Live'
+        />
+        <ProjectComponent 
+            title='FitPhysique' 
+            image='Fitphysique.webp' 
+            alt='FitPhysique website'
+            description='Landing Page of a gym'
+            tecnologies={[ 'HTML', 'CSS', 'JavaScript' ]}
+            codeLink='https://github.com/NicoAlvarado10/Proyecto-Gym.git'
+            website='https://gimnasio-fit.netlify.app/'
+            codeBtnText='Repo'
+            liveBtnText='Live'
+        />
+        <ProjectComponent 
+            title='Veta' 
+            image='Proyecto-Veta.webp' 
+            alt='Veta website'
+            description='Landing Page of a company offering virtual reality (VR) services'
+            tecnologies={[ 'HTML', 'CSS', 'JavaScript' ]}
+            codeLink='https://github.com/NicoAlvarado10/Proyecto-Veta.git'
+            website='https://proyecto-veta.netlify.app/'
+            codeBtnText='Repo'
+            liveBtnText='Live'
+        />
+        <ProjectComponent 
+            title='Astro Clone' 
+            image='Clon-de-Astro.webp'
+            alt='Astro website'
+            description='Landing Page of Astro'
+            tecnologies={[ 'HTML', 'CSS', 'JavaScript' ]}
+            codeLink='https://github.com/NicoAlvarado10/Proyecto-AlexDesing2.git'
+            website='https://proyecto-alexdesing.netlify.app/'
+            codeBtnText='Repo'
+            liveBtnText='Live'
+        />
+    </Projects>
+    
+    <About 
+    id="#about"
+    title="About Me" 
+    secondTitle="How I Started Programming"
+    paragraphs={ [
+      "My first approach to technology was through video games. But when I discovered web development, I leaned towards that side.",
+      "Currently, I am studying self-taught through courses, tutorials, and reading documentation. I am committed to continuously expanding my skills and staying updated with the latest industry technologies.",
+      "I am excited to apply my programming skills in a professional environment and look forward to the opportunity to be part of a team."
+    ] }
+    
+    />
+    <Footer
+        created="Created with Astro & Tailwind"
+    />
+</Layout>

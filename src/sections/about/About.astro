@@ -1,0 +1,27 @@
+---
+import OldPictCtn from '../../ui elements/OldPicCtn/OldPictCtn.astro';
+
+interface Props {
+    title: string,
+    secondTitle: string,
+    paragraphs: string[],
+    id:string
+}
+
+const { title, secondTitle, paragraphs } = Astro.props;
+---
+<section id="about" class="w-full max-w-5xl mt-24 ">
+    <h2 class="text-2xl font-black pt-2">{ title }</h2>
+    <div class="mt-5 relative flex flex-col gap-7 items-center md:flex-row ">
+        <OldPictCtn src='me.webp'/>
+        
+        <div class="flex flex-col gap-2">
+            <h3 class="font-semibold text-lg">{ secondTitle }</h3>
+            {
+                paragraphs.map(line => (
+                    <p>{ line }</p>
+                ))
+            }
+        </div>
+    </div>
+</section>
