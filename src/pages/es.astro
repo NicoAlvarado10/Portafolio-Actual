@@ -31,13 +31,25 @@ import ProjectComponent from '../components/projectComponent/ProjectComponent.as
     resume="Mi CV"
     />
     <Skills title="Habilidades" />
+    
     <Projects title="Proyectos " id="#projects">
+        <ProjectComponent 
+            title='NicoUI' 
+            image=' /nico-ui.webp' 
+            alt='NicoUI website'
+            description='NicoUI es una colección de componentes web diseñados con Tailwind CSS. Fácil de usar y personalizar, se adapta a múltiples frameworks como React, Astro, Angular y Vue.'
+            tecnologies={[ 'Astro', 'Tailwind CSS', 'JavaScript'  ]}
+            codeLink='https://github.com/NicoAlvarado10/NicoUI.git'
+            website='https://nico-ui.vercel.app/'
+            codeBtnText='Repo'
+            liveBtnText='Vivo'
+        />
         <ProjectComponent 
             title='Rental' 
             image=' /Rental.webp' 
             alt='Rental website'
             description='Industria que ofrece renta de autos'
-            tecnologies={[ 'ASTRO', 'CSS', 'JavaScript'  ]}
+            tecnologies={[ 'Astro', 'CSS', 'JavaScript'  ]}
             codeLink='https://github.com/NicoAlvarado10/rental-landing.git'
             website='https://rental-landing.netlify.app/'
             codeBtnText='Repo'
@@ -99,6 +111,7 @@ import ProjectComponent from '../components/projectComponent/ProjectComponent.as
             liveBtnText='Vivo'
         />
     </Projects>
+
     <About id="#about"
         title="Sobre mí" 
         secondTitle="Cómo comencé a programar"
